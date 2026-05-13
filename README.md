@@ -3,7 +3,7 @@
 <div align="center">
   <img src="https://i.pinimg.com/736x/96/68/1d/96681d3c17fe3007a4be195f6a61f9e2.jpg" alt="Taberu Preview" width="600"/>
   
-  **Учебный проект по созданию современного лендинга ресторана японской кухни**
+  **Учебный проект по созданию современного лендинга ресторана японской кухни. Ни единая фотография, ни идея НЕ ПРИНАДЛЕЖИТ МНЕ. Мое только код.**
   
   [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
   [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
