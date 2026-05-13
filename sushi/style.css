@@ -1,0 +1,682 @@
+:root {
+    --bg: #FFF8F0;
+    --text: #4A3B3B;
+    --text-h: #3B2B2B;
+    --primary: #9D4E4E;
+    --primary-hover: #8d3232;
+}
+
+/* —— БАЗОВЫЕ СБРОСЫ —— */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* —— 1. HEADER —— */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    background-color: var(--bg);
+    position: relative;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--primary);
+    letter-spacing: 1px;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+}
+
+header nav ul li a {
+    font-size: 24px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--text);
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+header nav ul li a:hover,
+.link-how:hover {
+    color: var(--primary-hover);
+}
+
+.btn-contact {
+    border: 1px solid var(--primary);
+    padding: 0.8rem 1.6rem;
+    border-radius: 10px;
+    color: var(--primary);
+    font-size: 20px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.btn-contact:hover {
+    background: var(--primary-hover);
+    color: var(--bg);
+}
+
+/* Кнопка мобильного меню */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text);
+    z-index: 100;
+}
+
+/* —— 2. HERO —— */
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5rem 4rem;
+    background-color: var(--bg);
+    gap: 3rem;
+}
+
+.hero-content {
+    flex: 1 1 400px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    color: var(--text-h);
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 4rem;
+    color: var(--text);
+    max-width: 70%;
+    line-height: 1.6;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--bg);
+    padding: 1.2rem 2.2rem;
+    border-radius: 3rem;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.link-how {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.hero-image {
+    flex: 1 1 300px;
+    background-color: var(--primary);
+    border-radius: 50% 50% 0 0;
+    padding: 3rem;
+    height: auto;
+    max-height: 500px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+/* —— 3. ABOUT US —— */
+.about {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 8rem 4rem;
+    background-color: var(--bg);
+    gap: 4rem;
+}
+
+.about-image {
+    flex: 1 1 300px;
+    background-color: var(--primary);
+    border-radius: 2rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+.about-img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    padding: 2rem;
+}
+
+.about-content {
+    flex: 1 1 300px;
+}
+
+.sub-label {
+    font-size: 20px;
+    color: var(--primary);
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.about-content h2 {
+    font-size: 36px;
+    color: var(--text-h);
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+
+.about-content p {
+    color: var(--text);
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+/* —— 4. MENU SECTION —— */
+.menu-section {
+    background-color: var(--primary);
+    color: var(--bg);
+    padding: 6rem 4rem 8rem;
+    text-align: center;
+}
+
+.menu-section h2 {
+    font-size: 40px;
+    margin-bottom: 3rem;
+}
+
+.menu-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 4rem;
+}
+
+.menu-filters button {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    color: var(--bg);
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu-filters button:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+.menu-filters button.active {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.menu-slider {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.menu-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 2rem;
+    width: 250px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.menu-card.featured {
+    background: var(--bg);
+    color: var(--text-h);
+    transform: scale(1.05);
+    border: none;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.menu-card .card-image {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.menu-card .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.menu-card h3 {
+    margin: 15px 0 8px;
+    font-size: 22px;
+}
+
+.menu-card p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.menu-card span {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.slider-controls button {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: var(--bg);
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-controls button:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.slider-controls button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.btn-see-more {
+    display: inline-block;
+    background: var(--bg);
+    color: var(--primary);
+    padding: 1rem 3rem;
+    border-radius: 3rem;
+    margin-top: 2rem;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn-see-more:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* —— 5. SPECIAL DISH —— */
+.special-dish {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 8rem 4rem;
+    background-color: var(--bg);
+    gap: 4rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.special-dish.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.special-content {
+    flex: 1 1 300px;
+}
+
+.special-content h2 {
+    font-size: 38px;
+    color: var(--text-h);
+    margin: 1rem 0 2rem;
+    line-height: 1.2;
+}
+
+.special-content p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+.special-image {
+    flex: 1 1 300px;
+    background-color: var(--primary);
+    border-radius: 2rem 2rem 0 2rem;
+    padding: 2rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+.special-image img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+/* —— 6. NEWSLETTER —— */
+.newsletter {
+    background-color: var(--primary);
+    color: var(--bg);
+    text-align: center;
+    padding: 6rem 2rem;
+}
+
+.newsletter h2 {
+    font-size: 36px;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.newsletter p {
+    margin-bottom: 3rem;
+    font-size: 18px;
+}
+
+.subscribe-form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.subscribe-form input {
+    flex: 1;
+    padding: 1.2rem 2rem;
+    border-radius: 3rem;
+    border: none;
+    min-width: 250px;
+    font-size: 16px;
+}
+
+.subscribe-form input:focus {
+    outline: 2px solid var(--bg);
+    outline-offset: 2px;
+}
+
+.subscribe-form button {
+    background: var(--bg);
+    color: var(--primary);
+    border: none;
+    padding: 1.2rem 3rem;
+    border-radius: 3rem;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.subscribe-form button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.subscribe-form button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.success-msg {
+    color: #2d6a4f;
+    font-weight: 600;
+    margin-top: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.error-msg {
+    color: #bc4742;
+    font-weight: 600;
+    margin-top: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.input-error {
+    border: 2px solid #bc4742 !important;
+}
+
+/* —— 7. FOOTER —— */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 3rem 4rem;
+    background-color: var(--bg);
+    font-size: 20px;
+    gap: 2rem;
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.social-icons {
+    display: flex;
+    gap: 2rem;
+}
+
+.social-icons a {
+    font-weight: bold;
+    color: var(--text);
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--primary);
+}
+
+/* —— АДАПТИВНОСТЬ —— */
+@media (max-width: 1024px) {
+    .hero-content h1 {
+        font-size: 38px;
+    }
+    
+    .hero-content p {
+        max-width: 100%;
+    }
+    
+    .about-content h2,
+    .special-content h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 1.5rem 2rem;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    header nav {
+        display: none;
+        width: 100%;
+    }
+    
+    header nav.nav-open {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--bg);
+        width: 100%;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        z-index: 99;
+        padding: 1rem;
+    }
+    
+    header nav.nav-open ul {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    header nav.nav-open ul li a {
+        font-size: 20px;
+        display: block;
+        padding: 1rem;
+    }
+    
+    .btn-contact {
+        display: none;
+    }
+    
+    .hero {
+        padding: 3rem 2rem;
+        text-align: center;
+    }
+    
+    .hero-content h1 {
+        font-size: 32px;
+    }
+    
+    .hero-actions {
+        justify-content: center;
+    }
+    
+    .about {
+        padding: 4rem 2rem;
+    }
+    
+    .menu-section {
+        padding: 4rem 2rem;
+    }
+    
+    .menu-slider {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .menu-card.featured {
+        transform: scale(1);
+    }
+    
+    .special-dish {
+        padding: 4rem 2rem;
+    }
+    
+    .newsletter h2 {
+        font-size: 28px;
+    }
+    
+    footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 28px;
+    }
+    
+    .menu-filters {
+        gap: 10px;
+    }
+    
+    .menu-filters button {
+        padding: 0.8rem 1.5rem;
+        font-size: 16px;
+    }
+    
+    .subscribe-form {
+        flex-direction: column;
+    }
+    
+    .subscribe-form input,
+    .subscribe-form button {
+        width: 100%;
+    }
+}

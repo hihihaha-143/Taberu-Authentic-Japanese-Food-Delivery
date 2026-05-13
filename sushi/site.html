@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- 1. Базовая кодировка и адаптивность -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 2. SEO: заголовок-->
+    <title>Taberu — Authentic Japanese Food & Sushi Delivery</title>
+
+    <!-- 3. SEO: описание  -->
+    <meta name="description" content="Taberu — best Japanese food delivery. Enjoy authentic sushi, ramen, sashimi and udon. Fresh ingredients, professional chef. Order now!">
+
+    <!-- 4. SEO: ключевые слова  -->
+    <meta name="keywords" content="Japanese food, sushi, ramen, sashimi, udon, authentic Japanese cuisine, food delivery, Taberu">
+
+    <!-- 5. SEO: автор и robots -->
+    <meta name="author" content="Taberu Team">
+    <meta name="robots" content="index, follow">
+
+    <!-- 6. Open Graph -->
+    <meta property="og:title" content="Taberu — Authentic Japanese Food">
+    <meta property="og:description" content="Enjoy delicious Japanese foods. Sushi, ramen, sashimi. Order now and get discount up to 35%.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://taberu.com">
+
+    <!-- Ссылка на картинку для предпросмотра в соцсетях -->
+    <meta property="og:image" content="https://taberu.com/images/og-preview.jpg">
+
+    <!-- 8. Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- 9. Подключение CSS  -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="base.css">
+
+    <!-- 10. Шрифты Google для красоты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Alpine.js CDN -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+</head>
+<body x-data="app()" x-init="init()">
+
+          <!-- 1. HEADER / NAVIGATION -->
+    <div x-data="{ mobileMenuOpen: false }">
+        <header>
+            <div class="logo">TABERU</div>
+            
+            <!-- Кнопка мобильного меню (бургер) -->
+            <button class="mobile-menu-btn" @click="mobileMenuOpen = !mobileMenuOpen" aria-label="Меню">
+                <span x-show="!mobileMenuOpen">☰</span>
+                <span x-show="mobileMenuOpen">✕</span>
+            </button>
+
+            <nav :class="mobileMenuOpen ? 'nav-open' : ''">
+                <ul>
+                    <li><a href="#menu" @click.prevent="mobileMenuOpen = false; document.getElementById('menu').scrollIntoView({behavior: 'smooth'})">Menu</a></li>
+                    <li><a href="#foods" @click.prevent="mobileMenuOpen = false; document.getElementById('foods').scrollIntoView({behavior: 'smooth'})">Foods</a></li>
+                    <li><a href="#services" @click.prevent="mobileMenuOpen = false; document.getElementById('services').scrollIntoView({behavior: 'smooth'})">Services</a></li>
+                    <li><a href="#about" @click.prevent="mobileMenuOpen = false; document.getElementById('about').scrollIntoView({behavior: 'smooth'})">About us</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="btn-contact" @click.prevent="mobileMenuOpen = false; alert('Contact form will open')">Contact us</a>
+        </header>
+    </div>
+
+    <!-- 2. HERO SECTION -->
+     <section class="hero" id="foods">
+        <div class="hero-content">
+            <h1>Enjoy Delicious <br> The Japanese Foods</h1>
+            <p>We serve the best Japanese foods. Cooked with selected ingredients by a professional chef with an authentic taste. We hope you enjoy our meals!</p>
+            <div class="hero-actions">
+                <a href="#" class="btn-primary" @click.prevent="alert('Переход к оформлению заказа!')">Order Now</a>
+                <a href="#" class="link-how" @click.prevent="scrollToSection('about')">How to Order</a>
+            </div>
+        </div>
+        <div>
+            <img class="hero-image" src="https://i.pinimg.com/736x/96/68/1d/96681d3c17fe3007a4be195f6a61f9e2.jpg" alt="Japanese Food Platter">
+        </div>
+    </section>
+
+    <!-- 3. ABOUT US SECTION -->
+     <section class="about" id="about">
+        <div class="about-image">
+            <img class="about-img" src="https://i.pinimg.com/736x/da/85/e7/da85e79e337ac6c2f5bae69ba2a490be.jpg" alt="Ramen bowl">
+        </div>
+        <div class="about-content">
+            <span class="sub-label">About Us / 私たちに関しては</span>
+            <h2>We serve authentic Japanese taste to you</h2>
+            <p>We have been running for ten years to continue serving Japanese food, with authentic flavors that we will continue to nurture for you.</p>
+        </div>
+    </section>
+
+    <!-- 4. MENU SECTION -->
+     <section class="menu-section" id="menu" x-data="menuSlider()">
+        <h2>Our Menu</h2>
+        
+        <!-- Filters (tags) -->
+        <div class="menu-filters">
+            <button 
+                @click="filter = 'all'; currentIndex = 0" 
+                :class="{ 'active': filter === 'all' }">All</button>
+            <button 
+                @click="filter = 'sushi'; currentIndex = 0" 
+                :class="{ 'active': filter === 'sushi' }">Sushi</button>
+            <button 
+                @click="filter = 'sashimi'; currentIndex = 0" 
+                :class="{ 'active': filter === 'sashimi' }">Sashimi</button>
+            <button 
+                @click="filter = 'ramen'; currentIndex = 0" 
+                :class="{ 'active': filter === 'ramen' }">Ramen</button>
+            <button 
+                @click="filter = 'udon'; currentIndex = 0" 
+                :class="{ 'active': filter === 'udon' }">Udon</button>
+            <button 
+                @click="filter = 'others'; currentIndex = 0" 
+                :class="{ 'active': filter === 'others' }">Others</button>
+        </div>
+
+        <!-- Menu cards (slider/carousel) -->
+        <div class="menu-slider">
+            <template x-for="(item, index) in filteredItems" :key="index">
+                <div 
+                    class="menu-card" 
+                    :class="{ 'featured': index === currentIndex }"
+                    @click="currentIndex = index"
+                    x-show="Math.abs(index - currentIndex) <= 1"
+                    x-transition.opacity.duration.300ms
+                >
+                    <div class="card-image">
+                        <img :src="item.image" :alt="item.name">
+                    </div>
+                    <h3 x-text="item.name"></h3>
+                    <p x-text="'$' + item.price + ' USD'"></p>
+                    <span x-text="item.items + ' items'"></span>
+                </div>
+            </template>
+        </div>
+
+        <!-- Navigation arrows (visual only) -->
+        <div class="slider-controls">
+            <button class="prev" @click="prev()" :disabled="currentIndex === 0">&#10094;</button>
+            <button class="next" @click="next()" :disabled="currentIndex >= filteredItems.length - 1">&#10095;</button>
+        </div>
+
+        <a href="#" class="btn-see-more" @click.prevent="alert('Больше блюд в полном меню!')">See More</a>
+    </section>
+
+      <!-- 5. SPECIAL DISH SECTION (Sashimi) -->
+    <section class="special-dish" x-data="{ reveal: false }" x-init="reveal = true" :class="{ 'reveal-active': reveal }">
+        <div class="special-content">
+            <span class="sub-label">Newly Added / 新たに追加</span>
+            <h2>Our special dish Sashimi Oishi Taberu</h2>
+            <p>We serve the best and highest seafood taken raw with soy sauce, grated ginger, and wasabi with an authentic taste.</p>
+        </div>
+        <div>
+            <img class="special-image" src="https://i.pinimg.com/736x/be/75/52/be75525ab6af621229bab874fee1c4e5.jpg" alt="Sashimi Oishi Taberu">
+        </div>
+    </section>
+
+    <!-- 6. NEWSLETTER / MEMBERSHIP -->
+     <section class="newsletter" id="services" x-data="newsletterForm()">
+        <h2>Join Our Member and Get Discount Up To 35%</h2>
+        <p>Sign up for the Taberu newsletter.</p>
+        
+        <form class="subscribe-form" @submit.prevent="subscribe">
+            <input 
+                type="email" 
+                placeholder="Enter your email address" 
+                x-model="email"
+                :class="{ 'input-error': error }"
+                required>
+            <button type="submit" :disabled="loading">
+                <span x-show="!loading">Subscribe</span>
+                <span x-show="loading">Subscribing...</span>
+            </button>
+        </form>
+        <p x-show="success" class="success-msg" x-text="successMessage" x-transition></p>
+        <p x-show="error" class="error-msg" x-text="errorMessage" x-transition></p>
+    </section>
+
+    <!-- 7. FOOTER -->
+    <footer x-data="{ year: new Date().getFullYear() }">
+        <div class="footer-logo">TABERU</div>
+        <p>Taberu © Copyright <span x-text="year"></span>. All right reserved</p>
+        <div class="social-icons">
+            <a href="#" @click.prevent="alert('Facebook page')">FB</a>
+            <a href="#" @click.prevent="alert('Twitter page')">TW</a>
+            <a href="#" @click.prevent="alert('Instagram page')">IG</a>
+            <a href="#" @click.prevent="alert('YouTube channel')">YT</a>
+        </div>
+    </footer>
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
