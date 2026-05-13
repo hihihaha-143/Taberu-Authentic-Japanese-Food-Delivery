@@ -3,13 +3,15 @@
 <div align="center">
   <img src="https://i.pinimg.com/736x/96/68/1d/96681d3c17fe3007a4be195f6a61f9e2.jpg" alt="Taberu Preview" width="600"/>
   
-  **Учебный проект по созданию современного лендинга ресторана японской кухни. Ни единая фотография, ни идея НЕ ПРИНАДЛЕЖИТ МНЕ. Мое только код.**
+  **Учебный проект по созданию современного лендинга ресторана японской кухни. Ни единая фотография, ни идея сайта НЕ ПРИНАДЛЕЖИТ МНЕ.**
   
   [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
   [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
   [![Alpine.js](https://img.shields.io/badge/Alpine.js-8BC0D0?style=for-the-badge&logo=alpine.js&logoColor=black)](https://alpinejs.dev/)
   [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 </div>
+
+**Примечание:** В учебной версии изображения загружаются с Pinterest CDN. Создано ТОЛЬКО в учебных целях и демонстрации навыков ВЕРСТКИ.
 
 ---
 
@@ -62,6 +64,3 @@ Taberu (食べる — «есть» по-японски) — это одност�
 | **Google Fonts** | Шрифты Open Sans и Playfair Display |
 | **Intersection Observer** | Отслеживание появления элементов (через Alpine.js) |
 
----
-
-## 📂 Структура проекта
